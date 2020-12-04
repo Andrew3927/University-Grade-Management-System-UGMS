@@ -5,9 +5,9 @@ public class Methods {
 //    }
 
 
-    public static void SortingOnGPA(AllStudent allStudent) {
-        SortingOnGPA.sorting(allStudent);
-    }
+//    publicublic static void SortingOnGPA(AllStudent allStudent) {
+//        SortingOnGPA.sorting(allStudent);
+//    }
 
 
 }

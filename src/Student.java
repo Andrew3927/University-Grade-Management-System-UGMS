@@ -3,76 +3,38 @@ import java.util.Arrays;
 public class Student {
     private String firstName;
     private String lastName;
-    private String ID;
+    private String studentID;
     private Double[] scores = new Double[15];
-    private int credit;
 
-
-    public Student(String firstName, String lastName, String ID, double scores, int index) {
-        this.lastName = lastName;
-        this.firstName = firstName;
-        this.ID = ID;
-        this.scores[index] = scores;
+    public Student(String buf_info, int index) {
+        String[] temp_info = buf_info.split(",");
+        this.firstName = temp_info[0];
+        this.lastName = temp_info[1];
+        this.studentID = temp_info[2];
+        this.scores[index] = Double.parseDouble(temp_info[3]);
     }
 
-    public Student(String firstName, String lastName, String id, String s, int index) {
-        this.lastName = lastName;
-        this.firstName = firstName;
-        this.ID = id;
-        scores[index] = Double.valueOf(s);
-    }
+//    public Student(String firstName, String lastName, String studentID, double scores, int index) {
+//        this.lastName = lastName;
+//        this.firstName = firstName;
+//        this.studentID = studentID;
+//        this.scores[index] = scores;
+//    }
+//
+//    public Student(String firstName, String lastName, String id, String score, int index) {
+//        this.lastName = lastName;
+//        this.firstName = firstName;
+//        this.studentID = id;
+//        this.scores[index] = Double.valueOf(score);
+//    }
 
-    public static double getGPA(Double[] scores, AllStudent allStudent) {//算gpa
-
-        double gradePointTotal = 0;
-        double gradeOfEachCourseTotal = 0;
-        for (int i = 0; i < allStudent.courses.size(); i++) {
-            if (scores[i] == null) continue;
-            gradePointTotal += pointOfEachCourse(scores[i]) * allStudent.courses.get(i).getCredit();
-            gradeOfEachCourseTotal += allStudent.courses.get(i).getCredit();
-        }
-
-        return Double.parseDouble(new java.text.DecimalFormat("#.00").format(gradePointTotal / gradeOfEachCourseTotal));
-    }
-
-    public static double pointOfEachCourse(double grade) {//根据实际成绩判断学分方法
-        double point = 0.0;
-        if (grade >= 93) point = 4.0;
-        else if (grade >= 88) point = 3.7;
-        else if (grade >= 83) point = 3.3;
-        else if (grade >= 78) point = 3.0;
-        else if (grade >= 72) point = 2.7;
-        else if (grade >= 68) point = 2.3;
-        else if (grade >= 63) point = 2.0;
-        else if (grade >= 58) point = 1.7;
-        else if (grade >= 53) point = 1.3;
-        else if (grade >= 50) point = 1.0;
-        else point = 0.0;
-
-        return point;
-    }
-
-    public static String Grade(double grade) {
-        if (grade >= 93) return "A+";
-        else if (grade >= 88) return "A";
-        else if (grade >= 83) return "A-";
-        else if (grade >= 78) return "B+";
-        else if (grade >= 72) return "B";
-        else if (grade >= 68) return "B-";
-        else if (grade >= 63) return "C+";
-        else if (grade >= 58) return "C";
-        else if (grade >= 53) return "C-";
-        else if (grade >= 50) return "D";
-        else if (grade >= 40) return "F";
-        else return "O";
-    }
 
     public String toString() {
-        return lastName + "," + firstName + "\t" + ID + "\t" + Arrays.toString(scores);
+        return lastName + "," + firstName + "\t" + studentID + "\t" + Arrays.toString(scores);
     }
 
-    public String getID() {
-        return ID;
+    public String getStudentID() {
+        return studentID;
     }
 
     public String getFirstName() {
@@ -87,10 +49,6 @@ public class Student {
         return firstName + "," + lastName;
     }
 
-    public int getCredit() {
-        return credit;
-    }
-
     public Double[] getScores() {
         return scores;
     }
@@ -100,16 +58,12 @@ public class Student {
         return scores[index];
     }
 
-    public void setCredit(int credit) {
-        this.credit = credit;
-    }
-
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
-    public void setID(String ID) {
-        this.ID = ID;
+    public void setStudentID(String studentID) {
+        this.studentID = studentID;
     }
 
     public void setScore(double score, int index) {

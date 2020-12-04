@@ -3,10 +3,17 @@ public class Course {
     private int credit;
     private int classSize;
 
-    public Course(String courseCode, String credit, String classSize) {
-        this.courseCode = courseCode;
-        this.credit = Integer.parseInt(credit);
-        this.classSize = Integer.parseInt(classSize);
+    public Course(String[] buf_info) {
+        String[] temp_courseCode_credit = buf_info[0].split(",");
+        String temp_classSize = buf_info[1];
+
+        this.courseCode = temp_courseCode_credit[0];
+        this.courseCode = temp_courseCode_credit[1];
+        this.classSize = Integer.parseInt(temp_classSize);
+    }
+
+    public String toString() {
+        return courseCode + " " + credit + "\n" + classSize;
     }
 
     public String getCourseCode() {
