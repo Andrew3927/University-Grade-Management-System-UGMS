@@ -1,19 +1,21 @@
 import edu.princeton.cs.algs4.StdOut;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 
 public class StatisticsReports {
 
-    public static void statisticsReports(String classtxt) throws IOException {
-        BufferedReader br = FileIO.ReadTxt(classtxt);
+    @SuppressFBWarnings("NP_DEREFERENCE_OF_READLINE_VALUE")
+    public static void statisticsReports(String classPath) throws IOException {
+        BufferedReader br = FileIO.ReadTxt(classPath);
         assert br != null;
         String line = br.readLine();
         String[] course = FileIO.SpiltString(line);
         line = br.readLine();
         Course course1 = new Course(course[0], course[1], line);
-        int number = course1.getNumber();
-        StdOut.println("Course Code:" + course1.getName());
+        int number = course1.getClassSize();
+        StdOut.println("Course Code:" + course1.getCourseCode());
         StdOut.println("Credit:" + course1.getCredit());
 
         double allscore = 0;

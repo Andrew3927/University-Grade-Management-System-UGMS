@@ -6,9 +6,9 @@ public class ScoreInquiry {
             if (id.equals(allStudent.AllStudent.get(i).getID())) {
                 for (int j = 0; j < allStudent.AllStudent.get(i).size(); j++) {
                     if (allStudent.AllStudent.get(i).getScore(j) == -1.0) continue;
-                    StdOut.println(allStudent.courses.get(j).getName() + "         " + FileIO.Grade(allStudent.AllStudent.get(i).getScore(j)));
+                    StdOut.println(allStudent.courses.get(j).getCourseCode() + "         " + Student.Grade(allStudent.AllStudent.get(i).getScore(j)));
                 }
-                StdOut.println("GPA: " + FileIO.getGPA(allStudent.AllStudent.get(i).getScores(), allStudent));
+                StdOut.println("GPA: " + Student.getGPA(allStudent.AllStudent.get(i).getScores(), allStudent));
                 break;
             }
         }
@@ -20,9 +20,9 @@ public class ScoreInquiry {
                 StdOut.println(allStudent.AllStudent.get(i).getFirstName() + " " + allStudent.AllStudent.get(i).getLastName() + " " + allStudent.AllStudent.get(i).getID());
                 for (int j = 0; j < allStudent.AllStudent.get(i).size(); j++) {
                     if (allStudent.AllStudent.get(i).getScore(j) == -1.0) continue;
-                    StdOut.println(allStudent.courses.get(j).getName() + "         " + FileIO.Grade(allStudent.AllStudent.get(i).getScore(j)));
+                    StdOut.println(allStudent.courses.get(j).getCourseCode() + "         " + Student.Grade(allStudent.AllStudent.get(i).getScore(j)));
                 }
-                StdOut.println("GPA: " + FileIO.getGPA(allStudent.AllStudent.get(i).getScores(), allStudent));
+                StdOut.println("GPA: " + Student.getGPA(allStudent.AllStudent.get(i).getScores(), allStudent));
                 StdOut.println("");
 
             }

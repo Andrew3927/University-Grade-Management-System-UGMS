@@ -22,13 +22,13 @@ public class Student {
         scores[index] = Double.valueOf(s);
     }
 
-    public static double getGPA(Double[] Score, AllStudent allStudent) {//算gpa
+    public static double getGPA(Double[] scores, AllStudent allStudent) {//算gpa
 
         double gradePointTotal = 0;
         double gradeOfEachCourseTotal = 0;
         for (int i = 0; i < allStudent.courses.size(); i++) {
-            if (Score[i] == null) continue;
-            gradePointTotal += pointOfEachCourse(Score[i]) * allStudent.courses.get(i).getCredit();
+            if (scores[i] == null) continue;
+            gradePointTotal += pointOfEachCourse(scores[i]) * allStudent.courses.get(i).getCredit();
             gradeOfEachCourseTotal += allStudent.courses.get(i).getCredit();
         }
 
@@ -66,7 +66,7 @@ public class Student {
         else if (grade >= 40) return "F";
         else return "O";
     }
-    
+
     public String toString() {
         return lastName + "," + firstName + "\t" + ID + "\t" + Arrays.toString(scores);
     }

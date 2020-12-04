@@ -5,8 +5,8 @@ import java.io.IOException;
 
 public class AddStudent {
 
-    public static void ChooseStudent(String classtxt, int NumberClass, AllStudent allStudent) throws IOException {//处理班级文件
-        BufferedReader br = FileIO.ReadTxt(classtxt);
+    public static void ChooseStudent(String classPath, int readClassAmount, AllStudent allStudent) throws IOException {//处理班级文件
+        BufferedReader br = FileIO.ReadTxt(classPath);
         assert br != null;
         String line = br.readLine();
         String[] name = FileIO.SpiltString(line);
@@ -18,10 +18,10 @@ public class AddStudent {
             String[] student = FileIO.SpiltString(line);
             int ok = FindStudent(student[2], allStudent);
             if (ok != -1) {
-                UpdateStudent(allStudent.AllStudent.get(ok), Double.parseDouble(student[3]), NumberClass);
+                UpdateStudent(allStudent.AllStudent.get(ok), Double.parseDouble(student[3]), readClassAmount);
 
             } else {
-                addStudent(allStudent, student[0], student[1], student[2], Double.parseDouble(student[3]), NumberClass);
+                addStudent(allStudent, student[0], student[1], student[2], Double.parseDouble(student[3]), readClassAmount);
             }
 
             StdOut.println();

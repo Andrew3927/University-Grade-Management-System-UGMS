@@ -7,26 +7,26 @@ public class cin_txt {
 
 
     public static void main(String[] args) throws IOException {
-        
-        int NumberClass = 0;
+
+        int readClassAmount = 0;
         StdOut.println("Please enter the database filename:");
 
 
         AllStudent allStudent = new AllStudent();
-        String input = StdIn.readLine();
-        ClassMessage.deal(input, allStudent);
+        String classPath = StdIn.readLine();
+        FileIO.deal(classPath, allStudent); // 传入路径，传出解析后信息所存储的地方。然后（读取文件，解析文件信息，放信息进容器）
         //StatisticsReports.statisticsReports(input);
-        AddStudent.ChooseStudent(input, NumberClass, allStudent);
+        AddStudent.ChooseStudent(classPath, readClassAmount, allStudent);
         //StdOut.println(allStudent.AllStudent.toString());
-        NumberClass++;
+        readClassAmount++;
 
         StdOut.println("Do you have another score report?\n" +
                 "Press \"Y\" for Yes and \"N\" for No.");
         if (StdIn.readLine().equals("Y")) {
             StdOut.println("Please enter the database filename:");
-            ClassMessage.deal(input, allStudent);
-            input = StdIn.readLine();
-            AddStudent.ChooseStudent(input, NumberClass, allStudent);
+            FileIO.deal(classPath, allStudent);
+            classPath = StdIn.readLine();
+            AddStudent.ChooseStudent(classPath, readClassAmount, allStudent);
             //StdOut.println(allStudent.AllStudent.toString());
         }
 
