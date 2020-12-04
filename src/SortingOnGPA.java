@@ -5,7 +5,7 @@ public class SortingOnGPA {
         Sort.quickSortGPA(allStudent, allStudent.AllStudent.size());
         StdOut.println("Student ID:\t\tStudent name:\t\tGPA");
         for (Student student : allStudent.AllStudent) {
-            StdOut.println(student.getID() + "\t\t" + student.getName() + "\t\t" + tool.getGPA(student.getScores(), allStudent));
+            StdOut.println(student.getID() + "\t\t" + student.getName() + "\t\t" + FileIO.getGPA(student.getScores(), allStudent));
         }
     }
 }

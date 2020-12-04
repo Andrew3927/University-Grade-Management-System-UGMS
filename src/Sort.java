@@ -21,10 +21,10 @@ public class Sort {
     }
 
     private static int partition(AllStudent allStudent, int p, int r) {
-        double pivot = tool.getGPA(allStudent.AllStudent.get(r).getScores(), allStudent);
+        double pivot = FileIO.getGPA(allStudent.AllStudent.get(r).getScores(), allStudent);
         int i = p;
         for (int j = p; j < r; ++j) {
-            if (tool.getGPA(allStudent.AllStudent.get(j).getScores(), allStudent) < pivot) {
+            if (FileIO.getGPA(allStudent.AllStudent.get(j).getScores(), allStudent) < pivot) {
                 if (i == j) {
                     ++i;
                 } else {

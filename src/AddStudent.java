@@ -6,16 +6,16 @@ import java.io.IOException;
 public class AddStudent {
 
     public static void ChooseStudent(String classtxt, int NumberClass, AllStudent allStudent) throws IOException {//处理班级文件
-        BufferedReader br = tool.ReadTxt(classtxt);
+        BufferedReader br = FileIO.ReadTxt(classtxt);
         assert br != null;
         String line = br.readLine();
-        String[] name = tool.SpiltString(line);
+        String[] name = FileIO.SpiltString(line);
         line = br.readLine();
         allStudent.courses.add(new Course(name[0], name[1], line));
         int number = Integer.parseInt(line);
         for (int i = 0; i < number; i++) {
             line = br.readLine();
-            String[] student = tool.SpiltString(line);
+            String[] student = FileIO.SpiltString(line);
             int ok = FindStudent(student[2], allStudent);
             if (ok != -1) {
                 UpdateStudent(allStudent.AllStudent.get(ok), Double.parseDouble(student[3]), NumberClass);
