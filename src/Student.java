@@ -1,66 +1,66 @@
 import java.util.Arrays;
 
 public class Student {
-    private String surnName;
-    private String givenName;
+    private String firstName;
+    private String lastName;
     private String ID;
-    private Double[] Score = new Double[15];
+    private Double[] scores = new Double[15];
     private int Credit;
 
 
-    public Student(String givenName, String surnName, String ID, double score, int index) {
-        this.surnName = surnName;
-        this.givenName = givenName;
+    public Student(String firstName, String lastName, String ID, double scores, int index) {
+        this.lastName = lastName;
+        this.firstName = firstName;
         this.ID = ID;
-        Score[index] = score;
+        this.scores[index] = scores;
     }
 
-    public Student(String givenName, String surnName, String id, String s, int index) {
-        this.surnName = surnName;
-        this.givenName = givenName;
+    public Student(String firstName, String lastName, String id, String s, int index) {
+        this.lastName = lastName;
+        this.firstName = firstName;
         this.ID = id;
-        Score[index] = Double.valueOf(s);
+        scores[index] = Double.valueOf(s);
     }
 
     public String toString() {
-        return surnName + "," + givenName + "\t" + ID + "\t" + Arrays.toString(Score);
+        return lastName + "," + firstName + "\t" + ID + "\t" + Arrays.toString(scores);
     }
 
     public String getID() {
         return ID;
     }
 
-    public String getGivenName() {
-        return givenName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public String getSurnName() {
-        return surnName;
+    public String getLastName() {
+        return lastName;
     }
 
     public String getName() {
-        return givenName + "," + surnName;
+        return firstName + "," + lastName;
     }
 
     public int getCredit() {
         return Credit;
     }
 
-    public Double[] getScore() {
-        return Score;
+    public Double[] getScores() {
+        return scores;
     }
 
     public double getScore(int index) {
-        if (Score[index] == null) return -1.0;
-        return Score[index];
+        if (scores[index] == null) return -1.0;
+        return scores[index];
     }
 
     public void setCredit(int credit) {
         Credit = credit;
     }
 
-    public void setSurnName(String surnName) {
-        this.surnName = surnName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public void setID(String ID) {
@@ -69,14 +69,14 @@ public class Student {
 
     public void setScore(double score, int index) {
 
-        Score[index] = score;
+        scores[index] = score;
     }
 
-    public void setGivenName(String givenName) {
-        this.givenName = givenName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public int size() {
-        return Score.length;
+        return scores.length;
     }
 }

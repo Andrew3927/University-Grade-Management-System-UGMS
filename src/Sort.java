@@ -21,10 +21,10 @@ public class Sort {
     }
 
     private static int partition(AllStudent allStudent, int p, int r) {
-        double pivot = tool.getGPA(allStudent.AllStudent.get(r).getScore(), allStudent);
+        double pivot = tool.getGPA(allStudent.AllStudent.get(r).getScores(), allStudent);
         int i = p;
         for (int j = p; j < r; ++j) {
-            if (tool.getGPA(allStudent.AllStudent.get(j).getScore(), allStudent) < pivot) {
+            if (tool.getGPA(allStudent.AllStudent.get(j).getScores(), allStudent) < pivot) {
                 if (i == j) {
                     ++i;
                 } else {
@@ -95,10 +95,10 @@ public class Sort {
     }
 
     private static int partitionSurnName(AllStudent allStudent, int p, int r) {
-        String pivot = allStudent.nowClassStudent.get(r).getGivenName();
+        String pivot = allStudent.nowClassStudent.get(r).getFirstName();
         int i = p;
         for (int j = p; j < r; ++j) {
-            if (pivot.compareTo(allStudent.nowClassStudent.get(j).getGivenName()) > 0) {
+            if (pivot.compareTo(allStudent.nowClassStudent.get(j).getFirstName()) > 0) {
                 if (i == j) {
                     ++i;
                 } else {
