@@ -3,26 +3,26 @@ import edu.princeton.cs.algs4.StdOut;
 import java.util.ArrayList;
 
 public class AllStudent {
-    private static ArrayList<Student> globalStudentList = new ArrayList<>();
-    private static ArrayList<Course> globalCoursesList = new ArrayList<>();
-    private static ArrayList<Student> nowClassStudent = new ArrayList<>();
+    private static ArrayList<Student> globalStudentList = new ArrayList<>(); // origin AllStudent
+    private static ArrayList<Course> globalCoursesList = new ArrayList<>(); // origin course
+    private static ArrayList<Student> nowClassStudent = new ArrayList<>();  //origin nowClassStudent
 
     // ouput: just for text if it works
     public void showInfo() {
         StdOut.println("**Students Name**");
         for (Student s : globalStudentList)
-            StdOut.println("s");
+            StdOut.println(s);
 
         StdOut.println("**Course List**");
         for (Course c : globalCoursesList)
-            StdOut.println("c");
+            StdOut.println(c);
 
         StdOut.println("**now Class Students**");
         for (Student s : nowClassStudent)
-            StdOut.println("s");
+            StdOut.println(s);
     }
 
-    public void addNowClassStudentList(String buf_info, int index) {
+    public void addGlobalStudentList(String buf_info, int index) {
         // 对文件的解析工作放在这一层（中间层）进行  IO层-> 容器层-> 定义类层
         String[] analysis_string = buf_info.split(",");
         String firstName = analysis_string[0];
@@ -37,7 +37,7 @@ public class AllStudent {
 //            updatecorrespondingScore(getSelectedStudent(temp_index), score, readClassAmount); 分数和课程平行的功能还要再思考后设计过
             updatecorrespondingScore(getSelectedStudent(temp_index), score, 0);
         } else {
-            nowClassStudent.add(new Student(buf_info, index));
+            globalStudentList.add(new Student(buf_info, index));
 //            addStudent(allStudent, student[0], student[1], student[2], Double.parseDouble(student[3]), readClassAmount);
         }
     }
@@ -46,9 +46,9 @@ public class AllStudent {
         globalCoursesList.add(course);
     }
 
-    public void addGlobalStudentsList(Student stu) {
-        globalStudentList.add(stu);
-    }
+//    public void addNowClassStudentList(Student) {
+//        nowClassStudent.add();
+//    }
 
     public int isExist(String id) {
         for (int i = 0; i < globalStudentList.size(); i++) {
@@ -84,27 +84,6 @@ public class AllStudent {
     }
 
     private static class Sort {
-
-        // 快速排序，a是数组，n表示数组的大小
-
-        // 排globalStudentList的序
-//        public static void quickSortGPA(AllStudent allStudent, int length) {
-//            ArrayList<Student> all = allStudent.globalStudentList;
-//            quickSortInternally(allStudent, 0, length - 1);
-//        }
-
-
-        // 快速排序递归函数，p,r为下标
-//        private static void quickSortInternally(AllStudent allStudent, int p, int r) {
-//
-//            if (p >= r) return;
-//            StdRandom.shuffle(allStudent.globalStudentList.toArray());
-//
-//            int q = partition(allStudent, p, r); // 获取分区点
-//            quickSortInternally(allStudent, p, q - 1);
-//            quickSortInternally(allStudent, q + 1, r);
-//        }
-
         // update version
         public static void quickSortGPA(int length) {
             quickSortInternally(0, length - 1);

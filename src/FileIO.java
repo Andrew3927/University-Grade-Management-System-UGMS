@@ -26,7 +26,7 @@ public class FileIO {
 
             String buf_string = bf.readLine();
             while (buf_string != null) {
-                allStudent.addNowClassStudentList(buf_string, 0);
+                allStudent.addGlobalStudentList(buf_string, 0);
                 buf_string = bf.readLine();
             }
 
