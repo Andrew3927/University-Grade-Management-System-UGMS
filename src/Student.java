@@ -78,4 +78,21 @@ public class Student {
     public int size() {
         return scores.length;
     }
+
+
+    public String Grade(int index) {
+        double score = scores[index];
+        if (score >= 93) return "A+";
+        else if (score >= 88) return "A";
+        else if (score >= 83) return "A-";
+        else if (score >= 78) return "B+";
+        else if (score >= 72) return "B";
+        else if (score >= 68) return "B-";
+        else if (score >= 63) return "C+";
+        else if (score >= 58) return "C";
+        else if (score >= 53) return "C-";
+        else if (score >= 50) return "D";
+        else if (score >= 40) return "F";
+        else return "O";
+    }
 }

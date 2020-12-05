@@ -1,5 +1,10 @@
-public class AddStudentList {
-
+//import edu.princeton.cs.algs4.StdOut;
+//
+//import java.io.BufferedReader;
+//import java.io.IOException;
+//
+//public class AddStudentList {
+//
 //    public static void ChooseStudent(String classPath, int readClassAmount, AllStudent allStudent) throws IOException {//处理班级文件
 //        BufferedReader br = FileIO.ReadTxt(classPath);
 //        assert br != null;
@@ -22,8 +27,8 @@ public class AddStudentList {
 //            StdOut.println();
 //        }
 //    }
-
-
+//
+//
 //    public static int FindStudent(String id, AllStudent allStudent) {
 //        for (int i = 0; i < allStudent.globalStudentList.size(); i++) {
 //            if (id.equals(allStudent.globalStudentList.get(i).getStudentID())) {
@@ -32,14 +37,14 @@ public class AddStudentList {
 //        }
 //        return -1;
 //    }
-
+//
 //    public static void UpdateStudent(Student student, double score, int index) {
 //        student.setScore(score, index);
 //    }
-
+//
 //    public static void addStudent(AllStudent allStudent, String surnName, String givenName, String ID, double score, int index) {
 //        allStudent.globalStudentList.add(new Student(surnName, givenName, ID, score, index));
 //    }
-
-
-}
+//
+//
+//}

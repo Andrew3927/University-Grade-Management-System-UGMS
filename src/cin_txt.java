@@ -14,7 +14,7 @@ public class cin_txt {
         AllStudent allStudent = new AllStudent(); // initialize the global container to store the whole read info.
         String classPath = StdIn.readLine(); // get the txt's path from client
 
-        FileIO.readFile(classPath, allStudent); // 传入路径，传出解析后信息所存储的地方。然后（读取文件，解析文件信息，放信息进容器）
+        StudentFileIO.readFile(classPath, allStudent); // 传入路径，传出解析后信息所存储的地方。然后（读取文件，解析文件信息，放信息进容器）
         allStudent.showInfo();
 //        AddCourse_studentsList.ChooseStudent(classPath, readClassAmount, allStudent);
 
@@ -24,10 +24,10 @@ public class cin_txt {
                 "Press \"Y\" for Yes and \"N\" for No.");
         if (StdIn.readLine().equals("Y")) {
             StdOut.println("Please enter the database filename:");
-            FileIO.readFile(classPath, allStudent);
+            StudentFileIO.readFile(classPath, allStudent);
             classPath = StdIn.readLine();
 //            AddCourse_studentsList.ChooseStudent(classPath, readClassAmount, allStudent);
-            FileIO.readFile(classPath, allStudent);
+            StudentFileIO.readFile(classPath, allStudent);
         }
 
 //        Methods.SortingOnGPA(allStudent);

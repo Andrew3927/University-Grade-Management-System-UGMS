@@ -8,7 +8,7 @@ public class Course {
         String temp_classSize = buf_info[1];
 
         this.courseCode = temp_courseCode_credit[0];
-        this.courseCode = temp_courseCode_credit[1];
+        this.credit = Integer.parseInt(temp_courseCode_credit[1]);
         this.classSize = Integer.parseInt(temp_classSize);
     }
 
