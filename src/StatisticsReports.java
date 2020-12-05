@@ -15,7 +15,7 @@ public class StatisticsReports {
 //        StdOut.println("Course Code:" + course1.getName());
 //        StdOut.println("Credit:" + course1.getCredit());
 
-        String pathname = Objects.requireNonNull(cin_txt.class.getClassLoader().getResource(classPath)).getPath();
+        String pathname = Objects.requireNonNull(_2.class.getClassLoader().getResource(classPath)).getPath();
         BufferedReader bf = new BufferedReader(new InputStreamReader(new FileInputStream(new File(pathname))));
 
         String[] buf_info = new String[2];

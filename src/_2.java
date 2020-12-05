@@ -8,20 +8,20 @@ public class _2 {
 
     public static void main(String[] args) throws IOException {
 
-        int NumberClass = 0;
+        int numberClass = 0;
         StdOut.println("Please enter the database filename:");
         AllStudent allStudent = new AllStudent();
         String input = StdIn.readLine();
-        StudentFileIO.readFile(input, allStudent);
-        NumberClass++;
+        StudentFileIO.readFile(input, numberClass, allStudent);
+        numberClass++;
         while (true) {
             StdOut.println("Do you have another score report?\n" +
                     "Press \"Y\" for Yes and \"N\" for No.");
             if (StdIn.readLine().equals("Y")) {
                 StdOut.println("Please enter the database filename:");
                 input = StdIn.readLine();
-                StudentFileIO.readFile(input, allStudent);
-                NumberClass++;
+                StudentFileIO.readFile(input, numberClass, allStudent);
+                numberClass++;
             } else break;
         }
         do {
@@ -51,7 +51,6 @@ public class _2 {
 
                     break;
                 case "4":
-//                    Sort.quickSortGPA(allStudent, allStudent.getSizeOfGlobalStudentList());
                     SortingOnGPA.sorting(allStudent);
                     break;
                 case "5":

@@ -16,7 +16,7 @@ public class ClassMassage {
 //        line = br.readLine();
 //        Course course1 = new Course(course[0], course[1], line);
 
-        String pathname = Objects.requireNonNull(cin_txt.class.getClassLoader().getResource(classPath)).getPath();
+        String pathname = Objects.requireNonNull(_2.class.getClassLoader().getResource(classPath)).getPath();
         BufferedReader bf = new BufferedReader(new InputStreamReader(new FileInputStream(new File(pathname))));
 
         String[] buf_info = new String[2];

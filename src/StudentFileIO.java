@@ -7,9 +7,10 @@ import java.util.Objects;
 
 public class StudentFileIO {
     @SuppressFBWarnings({"NP_DEREFERENCE_OF_READLINE_VALUE", "NP_ALWAYS_NULL", "NP_NULL_PARAM_DEREF_NONVIRTUAL", "OS_OPEN_STREAM", "DM_DEFAULT_ENCODING"})
-    public static void readFile(String classPath, AllStudent allStudent) throws IOException {//处理班级文件
+    public static void readFile(String classPath, int numberOfClass, AllStudent allStudent) throws IOException {//处理班级文件
+        // update pass parameter: numberOfClass
         try {
-            String pathname = Objects.requireNonNull(cin_txt.class.getClassLoader().getResource(classPath)).getPath();
+            String pathname = Objects.requireNonNull(_2.class.getClassLoader().getResource(classPath)).getPath();
             BufferedReader bf = new BufferedReader(new InputStreamReader(new FileInputStream(new File(pathname))));
             assert bf != null;
 
@@ -21,7 +22,7 @@ public class StudentFileIO {
 
             String buf_string = bf.readLine();
             while (buf_string != null) {
-                allStudent.addGlobalStudentList(buf_string, 0);
+                allStudent.addGlobalStudentList(buf_string, numberOfClass); // update: use numberOfClass
                 buf_string = bf.readLine();
             }
 

@@ -56,11 +56,15 @@ public class AllStudent {
         int temp_index = isExistGlobalStudents(studentID);
         if (temp_index != -1) {
 //            updatecorrespondingScore(getSelectedStudent(temp_index), score, readClassAmount); 分数和课程平行的功能还要再思考后设计过
-            updatecorrespondingScore(getSelectedStudent(temp_index), score, 0);
+            updatecorrespondingScore(getSelectedStudent(temp_index), score, index);
         } else {
             globalStudentList.add(new Student(buf_info, index));
 //            addStudent(allStudent, student[0], student[1], student[2], Double.parseDouble(student[3]), readClassAmount);
         }
+    }
+
+    public void addGlobalCoursesList(Course course) {
+        globalCoursesList.add(course);
     }
 
     public void addNowClassStudentList(String buf_info) {
@@ -80,10 +84,6 @@ public class AllStudent {
             nowClassStudent.add(new Student(buf_info, 0));
 //            addStudent(allStudent, student[0], student[1], student[2], Double.parseDouble(student[3]), readClassAmount);
         }
-    }
-
-    public void addGlobalCoursesList(Course course) {
-        globalCoursesList.add(course);
     }
 
     public int isExistNowClassStudent(String id) {
